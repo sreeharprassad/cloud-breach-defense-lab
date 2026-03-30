@@ -84,22 +84,30 @@ Created filters for:
 
 #### a) Privilege Escalation Detection
 
-Filter pattern:
+**Filter pattern:**
+```plaintext
 { ($.eventName = "AttachUserPolicy") || ($.eventName = "PutUserPolicy") }
+```
+
 
 ---
 
 #### b) Root Account Usage
 
-Filter pattern:
+**Filter pattern:**
+```plaintext
 { $.userIdentity.type = "Root" }
+```
+
 
 ---
 
 #### c) Unauthorized API Calls
 
-Filter pattern:
+**Filter pattern:**
+```plaintext
 { ($.errorCode = "UnauthorizedOperation") || ($.errorCode = "AccessDenied") }
+```
 
 ---
 
